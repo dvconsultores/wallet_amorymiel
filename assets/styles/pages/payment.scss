@@ -1,0 +1,59 @@
+#payment {
+  @include parent;
+  padding-inline: var(--margin-global);
+
+
+  h5 {
+    --fw: 700;
+    --fs: 12px;
+    color: #333;
+    font-family: var(--font2);
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  p {
+    --fw: 500;
+    --fs: 10px;
+    color: #333;
+    font-family: var(--font2);
+    line-height: normal;
+    text-transform: none;
+  }
+
+
+  &-detail {
+    margin-bottom: 29px;
+    --br: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    aside > div:first-child h5 { max-width: 101px }
+
+    span {
+      letter-spacing: normal !important;
+      --fw: 700;
+      color: #000;
+      font-family: var(--font2);
+      line-height: normal;
+      font-size: 12px;
+    }
+
+
+    .min-width-span {
+      min-width: 130px!important;
+    }
+  }
+
+  .v-form {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    column-gap: 20px;
+
+    > :first-child {
+      grid-column: span 2;
+    }
+  }
+}
