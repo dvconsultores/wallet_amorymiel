@@ -1,6 +1,9 @@
 <template>
   <div id="details">
-    <modalSelection ref="modalSelection" />
+    <modalSelection
+      ref="modalSelection"
+      @complete="onDateSelected"
+    />
 
     <img src="@/assets/sources/logos/logotype.svg" alt="logotype" style="margin-top: var(--margin-header);" class="mb-4">
 
@@ -70,13 +73,12 @@
       <v-btn
         class="btn-outlined"
         style="--b-color: var(--primary); --bg: var(--secondary)"
+        @click="$refs.modalSelection.model = true"
       >
         <span style="color: var(--primary) !important;">agendar una reunión</span>
       </v-btn>
 
-      <v-btn class="btn" @click="$refs.modalSelection.model = true">
-        adquirir acciones
-      </v-btn>
+      <v-btn class="btn">adquirir acciones</v-btn>
     </div>
   </div>
 </template>
@@ -125,6 +127,11 @@ export default {
       },
     }
   },
+  methods: {
+    onDateSelected(date) {
+      console.log(date);
+    }
+  }
 }
 </script>
 

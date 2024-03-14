@@ -424,7 +424,10 @@
   }
   
   // testing
-  & i {font-size: calc(var(--fs-icon) + .3em)}
+  & i {
+    color: var(--c-icon, --c) !important;
+    font-size: calc(var(--fs-icon) + .3em);
+  }
   // testing
   
   // text //
